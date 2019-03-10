@@ -1,0 +1,20 @@
+客户端模式(client_credentials)
+    获取token POST http://localhost:7070/uaa/oauth/token?grant_type=client_credentials&client_id=clientId&client_secret=clientSecret
+
+授权码模式(authorization_code)
+    获取授权码 GET http://localhost:7070/uaa/oauth/authorize?response_type=code&client_id=clientId&client_secret=clientSecret&redirect_uri=http://127.0.0.1:7070
+    获取token POST http://localhost:7070/uaa/oauth/token?grant_type=authorization_code&code=NuBl6Q&client_id=clientId&client_secret=clientSecret&redirect_uri=http://127.0.0.1:7070
+
+简化模式(implicit)
+    获取授权码 GET http://localhost:7070/uaa/oauth/authorize?response_type=token&client_id=clientId&redirect_uri=http://127.0.0.1:7070
+
+密码模式(password)
+    获取token POST http://localhost:7070/uaa/oauth/token?username=user&password=123456&grant_type=password&client_id=clientId&client_secret=clientSecret
+
+刷新token
+    POST http://localhost:7070/uaa/oauth/token?grant_type=refresh_token&refresh_token=6e434366-ae44-4229-bf65-55ac3b08c4d0&client_id=clientId&client_secret=clientSecret
+
+
+访问资源
+    GET header Authorization: Bearer 6d0ee2b2-c803-49bf-a813-a25bfb59a976
+        url http://localhost:7070/uaa/api/blog/1

@@ -1,0 +1,3 @@
+-- clientId:clientSecret
+insert into oauth_client_details(client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove) values
+('clientId',null, '$2a$10$CApPjXVjIGzDc3FDAbnL2ep/YKqZRHQOnbdL.mjAnudQ2ARENWKBO', 'legrandScope', 'authorization_code,password,refresh_token,implicit,client_credentials', 'http://127.0.0.1:7070', NULL, 60, 1800, NULL, 'true');
